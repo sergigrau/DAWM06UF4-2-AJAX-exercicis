@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8" />
+		<title>exercici4</title>
+		<meta name="author" content="sergi grau" />
+		<script type="text/javascript">
+		
+		  function registreEsdeveniments(){
+            	mostrarDades.onclick= function(){
+            		ajax();
+            	};
+            }
+            
+            function creaObjecteXHR(){
+				var xhr;
+                try {
+                    // Firefox, Opera 8.0+, Safari
+                    xhr = new XMLHttpRequest();
+                } 
+                catch (e) {
+                    // Internet Explorer
+                    try {
+                        xhr = new ActiveXObject("Msxml2.XMLHTTP"); //ie6+
+                    } 
+                    catch (e) {
+                        try {
+                            xhr = new ActiveXObject("Microsoft.XMLHTTP");//ie5
+                        } 
+                        catch (e) {
+                            alert("El teu navegador no suporta AJAX!");
+                            return false;
+                        }
+                    }
+                }
+				return xhr;
+			}
+			
+			function callback(){
+				if(xhr.readyState==4){
+					var xmlDoc= xhr.responseXML.documentElement;
+	
+					for (i=0; i< xmlDoc.getElementsByTagName('missatge').length;i++){
+						var elementText= xmlDoc.getElementsByTagName('text')[i].firstChild.data;
+						document.getElementById("missatge").innerHTML+=elementText+"<br/>";
+					}	
+				}
+				
+			}
+			function ajax(){
+				xhr=creaObjecteXHR();
+                xhr.onreadystatechange = callback;
+                xhr.open("GET", "Exercici4.xml", true);
+				//xhr.open("GET", "Exercici4.jsp");
+                xhr.send(null);
+            }
+            
+            	window.addEventListener("load", registreEsdeveniments, true);
+            	
+        </script>
+    </head>
+    <body>
+									
+            <div id="mostrarDades" style="background-color:red;" />mostra les dades d'un XML </div>
+			<div id="missatge" /></div>
+    </body>
+</html>
