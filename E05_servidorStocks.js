@@ -75,17 +75,23 @@ function iniciar() {
 
         else if (pathname == '/generarJSON') {
             response.writeHead(200, {
-                "Content-Type": "text/plain; charset=utf-8"
+                "Content-Type": "application/json charset=utf-8"
             });
-         var dades = [
-                    ['Year', 'Acció1', 'Acció2'],
-                    ['2004', 1000, 400],
-                    ['2005', 1170, 460],
-                    ['2006', 660, 1120],
-                    ['2007', 1030, 540]
-                ];
+         var dades = {
+"cols":[
+    {"type":"string"},{"type":"number"}
+    ],
+"rows":[
+    {"c": [{ "v": "20-01-17"},{"v":35} ]},
+    {"c": [{ "v": "21-01-17"},{"v":30} ]},
+    {"c": [{ "v": "22-01-17"},{"v":35} ]},
+    {"c": [{ "v": "23-01-17"},{"v":36} ]},
+    {"c": [{ "v": "24-01-17"},{"v":28} ]},
+    {"c": [{ "v": "25-01-17"},{"v":25} ]},
+    ]
+};
 
-            response.write(dades);
+            response.write(JSON.stringify(dades));
             response.end();
         } else {
             response.writeHead(404, {

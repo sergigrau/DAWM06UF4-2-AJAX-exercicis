@@ -17,6 +17,7 @@
 window.onload = function () {
     var xhr;
     var dadesJSON;
+    var dataObj;
     cridarAJAX('/generarJSON');
 
     function cridarAJAX(url) {
@@ -34,7 +35,9 @@ window.onload = function () {
     function rebreDades() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                dades = xhr.response;                
+                dades = xhr.response;
+             dataObj=dades; //JSON.parse(dades.d);
+                
             } else {
                 console.log('problemes amb l\'AJAX');
             }
@@ -44,9 +47,7 @@ window.onload = function () {
 
     function dibuixarGrafic() {
 
-        var data = google.visualization.arrayToDataTable(dades);
-
-
+        var data = new google.visualization.DataTable(dataObj);
         var options = {
             'title': 'cotització setmanal',
             'width': 800,
