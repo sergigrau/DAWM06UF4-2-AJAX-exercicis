@@ -62,7 +62,7 @@ function iniciar() {
                 "Content-Type": "text/html; charset=utf-8"
             });
 
-            fs.readFile('./js/E04_caracterANumerics.js', function (err, sortida) {
+            fs.readFile('./js/E05_stocks.js', function (err, sortida) {
                 response.writeHead(200, {
                     'Content-Type': 'text/css'
                 });
@@ -75,10 +75,17 @@ function iniciar() {
 
         else if (pathname == '/generarJSON') {
             response.writeHead(200, {
-                "Content-Type": "text/xml; charset=utf-8"
+                "Content-Type": "text/plain; charset=utf-8"
             });
-         
-            response.write(xml);
+         var dades = [
+                    ['Year', 'Acció1', 'Acció2'],
+                    ['2004', 1000, 400],
+                    ['2005', 1170, 460],
+                    ['2006', 660, 1120],
+                    ['2007', 1030, 540]
+                ];
+
+            response.write(dades);
             response.end();
         } else {
             response.writeHead(404, {

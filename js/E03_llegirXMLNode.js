@@ -1,5 +1,5 @@
 /*
- * programa inverteix una cadena utilitzant AJAX i NodeJS
+ * programa que carrega un XML utilitzant AJAX i NodeJS
  * @author sergi.grau@fje.edu
  * @version 1.0
  * date 23.01.2017
@@ -7,7 +7,7 @@
  *
  * CHANGELOG
  * 23.01.2017
- * - programa inverteix una cadena utilitzant AJAX i NodeJS
+ * - programa que carrega un XML utilitzant AJAX i NodeJS
  *
  * NOTES
  * ORIGEN

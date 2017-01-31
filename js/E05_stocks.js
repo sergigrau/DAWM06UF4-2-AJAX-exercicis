@@ -14,12 +14,10 @@
  * Desenvolupament en entorn client. Escola del clot
  */
 
-
-
 window.onload = function () {
     var xhr;
     var dadesJSON;
-     cridarAJAX('/generarJSON');
+    cridarAJAX('/generarJSON');
 
     function cridarAJAX(url) {
         xhr = new XMLHttpRequest();
@@ -36,14 +34,7 @@ window.onload = function () {
     function rebreDades() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                document.getElementById("cadenaInvertida").innerHTML = xhr.response;
-                dadesJSON=[
-            ['Year', 'Acció1', 'Acció2'],
-            ['2004', 1000, 400],
-            ['2005', 1170, 460],
-            ['2006', 660, 1120],
-            ['2007', 1030, 540]
-        ];
+                dades = xhr.response;                
             } else {
                 console.log('problemes amb l\'AJAX');
             }
@@ -53,13 +44,7 @@ window.onload = function () {
 
     function dibuixarGrafic() {
 
-        var data = google.visualization.arrayToDataTable([
-            ['Year', 'Acció1', 'Acció2'],
-            ['2004', 1000, 400],
-            ['2005', 1170, 460],
-            ['2006', 660, 1120],
-            ['2007', 1030, 540]
-        ]);
+        var data = google.visualization.arrayToDataTable(dades);
 
 
         var options = {
