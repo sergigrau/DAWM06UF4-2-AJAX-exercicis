@@ -1,5 +1,5 @@
 /*
- * Servidor HTTP que suma dos nombres pasats com a paràmetre
+ * Servidor HTTP que llegeix un XML
  * @author  sergi.grau@fje.edu
  * @version 1.0
  * date 31.1.2017
@@ -7,7 +7,7 @@
  *
  * CHANGELOG
  *  31.1.2017
- * - Servidor HTTP que suma dos nombres pasats com a paràmetre
+ * - Servidor HTTP que  llegeix un XML
  *
  * NOTES
  * ORIGEN

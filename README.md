@@ -1,7 +1,8 @@
 # DAWM06UF4-2-AJAX-exercicis
 
-![alt tag](https://github.com/sergigrau/DAWM06UF1234-HTML5-material/blob/master/imatges/logo.png)
-
+![alt tag](https://github.com/sergigrau/DAWM06UF4-2-AJAX-exercicis/blob/master/imatges/html5.png)
+![alt tag](https://github.com/sergigrau/DAWM06UF4-2-AJAX-exercicis/blob/master/imatges/node.png)
+![alt tag](https://github.com/sergigrau/DAWM06UF4-2-AJAX-exercicis/blob/master/imatges/ajax.png)
 <p>
 solució dels exercicis de DAWM06UF4-2 AJAX
 Exercicis de classe que fan us de XmlHttpRequest nivell 2

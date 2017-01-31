@@ -1,5 +1,5 @@
 /*
- * Servidor HTTP que converteix el format d'un caràcter
+ * Servidor HTTP que genera un JSON amb les dades simulades d'una cotització
  * @author  sergi.grau@fje.edu
  * @version 1.0
  * date 31.1.2017
@@ -7,7 +7,7 @@
  *
  * CHANGELOG
  * 31.1.2017
- * - Servidor HTTP que converteix el format d'un caràcter
+ * - Servidor HTTP que enera un JSON amb les dades simulades d'una cotització
  *
  * NOTES
  * ORIGEN
@@ -28,12 +28,12 @@ function iniciar() {
             nombre = nombre.charCodeAt(0);
         console.log("Petició per a  " + pathname + " rebuda.");
         
-        if (pathname == '/E04_caracterANumerics') {
+        if (pathname == '/E05_stocks') {
             response.writeHead(200, {
                 "Content-Type": "text/html; charset=utf-8"
             });
 
-            fs.readFile('./E04_caracterANumerics.html', function (err, sortida) {
+            fs.readFile('./E05_stocks.html', function (err, sortida) {
                 response.writeHead(200, {
                     'Content-Type': 'text/html'
                 });
@@ -57,7 +57,7 @@ function iniciar() {
             });
 
         }
-        else if (pathname == '/js/E04_caracterANumerics.js') {
+        else if (pathname == '/js/E05_stocks.js') {
             response.writeHead(200, {
                 "Content-Type": "text/html; charset=utf-8"
             });
@@ -73,16 +73,11 @@ function iniciar() {
 
         }
 
-        else if (pathname == '/convertir') {
+        else if (pathname == '/generarJSON') {
             response.writeHead(200, {
                 "Content-Type": "text/xml; charset=utf-8"
             });
-            
-            var xml = '<resultats><decimal>' + nombre + '</decimal>' +
-                '<binari>' +  (nombre >>> 0).toString(2) + '</binari>' +
-                '<hexadecimal>' + (nombre >>> 0).toString(16) + '</hexadecimal>' +
-                '<octal>' + (nombre >>> 0).toString(8) + '</octal></resultats>';
-
+         
             response.write(xml);
             response.end();
         } else {
