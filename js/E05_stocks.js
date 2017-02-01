@@ -16,8 +16,7 @@
 
 window.onload = function () {
     var xhr;
-    var dadesJSON;
-    var dataObj;
+    var dades;
     cridarAJAX('/generarJSON');
 
     function cridarAJAX(url) {
@@ -36,7 +35,6 @@ window.onload = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 dades = xhr.response;
-             dataObj=dades; //JSON.parse(dades.d);
                 
             } else {
                 console.log('problemes amb l\'AJAX');
@@ -47,7 +45,7 @@ window.onload = function () {
 
     function dibuixarGrafic() {
 
-        var data = new google.visualization.DataTable(dataObj);
+        var data = new google.visualization.DataTable(dades);
         var options = {
             'title': 'cotització setmanal',
             'width': 800,
