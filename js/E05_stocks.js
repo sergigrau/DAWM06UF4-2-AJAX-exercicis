@@ -35,7 +35,6 @@ window.onload = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 dades = xhr.response;
-                
             } else {
                 console.log('problemes amb l\'AJAX');
             }
