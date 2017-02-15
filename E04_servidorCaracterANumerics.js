@@ -59,7 +59,7 @@ function iniciar() {
         }
         else if (pathname == '/js/E04_caracterANumerics.js') {
             response.writeHead(200, {
-                "Content-Type": "text/html; charset=utf-8"
+                "Content-Type": "application/javascript; charset=utf-8"
             });
 
             fs.readFile('./js/E04_caracterANumerics.js', function (err, sortida) {

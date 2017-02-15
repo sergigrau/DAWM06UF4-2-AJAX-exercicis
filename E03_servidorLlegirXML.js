@@ -55,7 +55,7 @@ function iniciar() {
 		}
 		else if (pathname == '/js/E03_llegirXMLNode.js') {
 			response.writeHead(200, {
-				"Content-Type": "text/html; charset=utf-8"
+				"Content-Type": "application/javascript; charset=utf-8"
 			});
 
 			fs.readFile('./js/E03_llegirXMLNode.js', function (err, sortida) {

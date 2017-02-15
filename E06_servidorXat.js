@@ -57,7 +57,7 @@ function iniciar() {
         }
         else if (pathname == '/js/E06_xat.js') {
             response.writeHead(200, {
-                "Content-Type": "text/html; charset=utf-8"
+                "Content-Type": "application/javascript; charset=utf-8"
             });
 
             fs.readFile('./js/E06_xat.js', function (err, sortida) {
@@ -73,7 +73,7 @@ function iniciar() {
 
         else if (pathname == '/enviar') {
             response.writeHead(201, {
-                "Content-Type": "text/xml; charset=utf-8"
+                "Content-Type": "text/plain; charset=utf-8"
             });
 
             if (consulta['missatge'] != undefined)
@@ -83,7 +83,7 @@ function iniciar() {
 
         else if (pathname == '/consultar') {
             response.writeHead(200, {
-                "Content-Type": "text/xml; charset=utf-8"
+                "Content-Type": "text/plain; charset=utf-8"
             });
             response.write(darreraEntrada);
             response.end();

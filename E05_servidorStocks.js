@@ -59,7 +59,7 @@ function iniciar() {
         }
         else if (pathname == '/js/E05_stocks.js') {
             response.writeHead(200, {
-                "Content-Type": "text/html; charset=utf-8"
+                "Content-Type": "application/javascript; charset=utf-8"
             });
 
             fs.readFile('./js/E05_stocks.js', function (err, sortida) {
