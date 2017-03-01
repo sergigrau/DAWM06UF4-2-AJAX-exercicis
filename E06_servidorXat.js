@@ -83,9 +83,10 @@ function iniciar() {
 
         else if (pathname == '/consultar') {
             response.writeHead(200, {
-                "Content-Type": "text/plain; charset=utf-8"
+                "Content-Type": "application/json; charset=utf-8"
             });
-            response.write(darreraEntrada);
+            var objecte = {missatge: darreraEntrada};
+            response.write(JSON.stringify(objecte));
             response.end();
         }
         else {

@@ -25,9 +25,9 @@ window.onload = function () {
     document.getElementById("missatge").onkeyup = function (e) {
         var codi = (e.keyCode ? e.keyCode : e.which);
         if (codi == 13) {
-            cridarAJAX('/enviar?missatge=' + 
-            document.getElementById("nom").value + ':'+
-            document.getElementById("missatge").value);
+            cridarAJAX('/enviar?missatge=' +
+                document.getElementById("nom").value + ':' +
+                document.getElementById("missatge").value);
 
         }
     }
@@ -47,9 +47,9 @@ window.onload = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 var li = document.createElement('li');
-                var resposta = xhr.response;
+                var resposta = JSON.parse(xhr.response).missatge;
                 if (resposta != darreraResposta) {
-console.log(darreraResposta);
+                    console.log(darreraResposta);
                     li.innerText = resposta;
                     darreraResposta = resposta;
 
